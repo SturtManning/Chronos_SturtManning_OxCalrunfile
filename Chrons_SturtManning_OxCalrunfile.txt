@@ -1,0 +1,1466 @@
+OxCal runfile and some notes about variations for the chronological model discussed in the paper in the Chronos volume by Sturt W. Manning.
+
+Options()
+ {
+  Curve("IntCal20","intcal20.14c");
+  Resolution=1;
+  kIterations=3000;
+ };
+ Plot()
+ {
+  Outlier_Model("General",T(5),U(0,4),"t");
+  Outlier_Model("SSimple",N(0,2),0,"s");
+  D_Sequence("Miletos WM, Quercus sp.")
+  {
+   R_Combine("RY1000-RY1010")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12301", 3439, 30)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12302", 3386, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(10);
+   R_Combine("RY1010-RY1020")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12303", 3467, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12407", 3385, 34)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(10);
+   R_Combine("RY1020-RY1030")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12304", 3404, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12305", 3459, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(10);
+   R_Combine("RY1030-RY1040")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12306", 3416, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12307", 3425, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(10);
+   R_Combine("RY1040-RY1050")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12308", 3361, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12309", 3397, 32)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(10);
+   R_Combine("RY1050-RY1060")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12310", 3345, 32)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12311", 3397, 32)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(10);
+   R_Combine("RY1060-RY1070")
+   {
+    Outlier ("SSimple",0.05);
+    R_Date("OxA-12312", 3388, 30)
+    {
+     Outlier ("SSimple",0.05);
+    };
+    R_Date("OxA-12313", 3352, 31)
+    {
+     Outlier ("SSimple",0.05);
+    };
+   };
+   Gap(7);
+   Date("Felling Miletos WM");
+   //waney edge
+  };
+  Sequence("Friedrich et al. 2006 olive as Sequence Only")
+  {
+   Boundary("Start Thera Olive");
+    R_Date("Hd-23599-24426 'rings' 1-13", 3383, 11)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Hd-23587 'rings' 14-37", 3372, 12)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Hd-23589 'rings' 38-59", 3349, 12)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Hd-23588-24402 'rings' 60-72", 3331, 10)
+    {
+     Outlier ("General",0.05);
+    };
+   Boundary("TE5");
+   //The Boundary TE5 represents the Thera Eruption and Stage 5 = the Thera/Santorini    volcanic eruption in the Akrotiri/Thera eruption sequence.
+  };
+  Sequence("Therasia olive sample 88-3")
+  {
+   Boundary();
+   R_Date("AA111457 88-3 Inner",3314,23)
+   {
+    Outlier ("General",0.05);
+   };
+   R_Date("AA110275 88-3 Outer",3297,23)
+   {
+    Outlier ("General",0.05);
+   };
+   Boundary("=TE5");
+  };
+  Sequence("Therasia olive sample 88-2")
+  {
+   Boundary();
+   R_Date("AA110272 88-2 Inner",3361,21)
+   {
+    Outlier ("General",0.05);
+   };
+   R_Date("AA110273 88-2 Outer",3341,23)
+   {
+    Outlier ("General",0.05);
+   };
+   R_Date("AA110274 88-2 Bark",3301,23)
+   {
+    Outlier ("General",0.05);
+   };
+   Boundary("=TE5");
+  };
+  Sequence("Therasia olive sample 88-1")
+  {
+   Boundary();
+   R_Date("AA111456 88-1 Inner",3398,21)
+   {
+    Outlier ("General",0.05);
+   };
+   R_Date("AA110271 88-1 Outer",3320,22)
+   {
+    Outlier ("General",0.05);
+   };
+   Boundary("=TE5");
+  };
+  Sequence("Therasia olive sample 72-2")
+  {
+   Boundary();
+   R_Date("AA111458 72-2 Inner",3358,23)
+   {
+    Outlier ("General",0.05);
+   };
+   R_Date("AA111459 72-2 Outer",3342,24)
+   {
+    Outlier ("General",0.05);
+   };
+   Boundary("=TE5");
+  };
+  Sequence ("Iklaina LHIIA-IIB or LHII and then LHIIB/IIIA dates on Short/Shorter-Lived Samples Only")
+  {
+   Boundary("TAQ for Start Iklaina LHII");
+   Phase ("LHIIA-IIB or LHII or LHIIB/IIIA SL")
+   {
+    R_Date("AA110766 Bos R. mid metararsus LHIIA-IIB",3231,27)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("AA110769 Cervus prox. R. femur LHIIA-IIB",3303,28)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("AA110754 Cereal indeterm. LHII",3272,40)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("Transition LHIIA-IIB or LHII to LHIIB/IIIA1");
+   R_Date("AA110757 Cereal indet. seed LHIIB/IIIA1",3217,22)
+   {
+    Outlier ("General",0.05);
+   };
+   Boundary("Transition Iklaina LHIIB/LHIIIA1 to LHIIIA2/IIIB");
+   R_Date("AA110767 Sus R. distal humerus LHIIIA1-IIIA2",3172,27)
+   {
+    Outlier ("General",0.05);
+   };
+   Boundary("Transition LHIIIA1/IIIA2 to LHIIIA2/IIIB");
+   Phase ("LHIIIA2/IIIB")
+   {
+    R_Date("AA110771 Ovis R. mid humerus LHIIIB",3068,25)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("AA110758 Vicia faba LHIIIB",3034,21)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("AA110765 Fig LHIIIA2/IIIB",3095,39)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("AA110761 Hordeum vulgare LHIIIA2/LHIIIB",3033,20)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary();
+  };
+  //NOTE: I do not include AA110768 as listed as "LHI-II" and so not clear if a TAQ for Thera Eruption, ditto likely pre-Thera eruption AA110772 from a MH-LHI/II context, nor AA110759 or AA11076 nor AA110764 as all wood samples, Quercus sp., and so possible in-built age issues
+  Sequence("Kakovatos LHIIA to LHIIB, all short-lived samples from Eder and Hadzi-Spiliopoulou 2017")
+  {
+   Boundary("Start LHIIA Kakovatos");
+   Phase ("LHIIA Kakovatos")
+   {
+    R_Date("MAM-27561 cattle bone",3330,26)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("MAMS-27562 sheep/goat bone",3259,25)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("LHIIA/LHIIB Transition Kakavatos");
+   Phase("LHIIB Kakavatos")
+   {
+    R_Date("MAMS-18178 Fig",3175,17)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("MAMS-18181 Carbonised figs",3217,17)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("MAMS-24249 Grain",3241,24)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("DEM-1996 Carbonised figs",3179,30)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("MAMS-24250 Barley",3261,24)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("MAMS-18177 Carbonised fig",3166,18)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("MAMS-24251 Grain",3226,24)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary();
+  };
+  Sequence()
+  {
+   Boundary("Start Chania Late LMIB");
+   Phase("Chania Late LMIB")
+   {
+    R_Date("OxA-2517 Pisum sativum", 3380, 80)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-2518 Vicia faba", 3340, 80)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-2646 Hordeum sp.", 3315, 70)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-2647 charred seed", 3150, 70)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10320 Vicia faba", 3208, 26)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10321 Horedeum sp.", 3268, 27)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10322 Pisum sativum", 3338, 26)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10323 charred seed", 3253, 25)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary();
+  };
+  Sequence("Late LMIB to LMIB Final")
+  {
+   Boundary("Start Myrtos-Pyrgos Late LMIB");
+   Phase("Myrtos-Pyrgos (LMIB Late) Destruction")
+   {
+    R_Date("OxA-3187 Hordeum sp.", 3230, 70)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-3188 Hordeum sp.", 3200, 70)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-3189 Vicia ervilia", 3270, 70)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-3225 Vicia ervilia", 3160, 80)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10324 Hordeum sp.", 3270, 26)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10325 Vicia ervilia", 3228, 26)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10326 Vicia ervilia", 3227, 25)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("OxA-10411 Hordeum sp.", 3150, 40)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("Transition LMIB Late to LMIB Final");
+   Phase("Mochlos (LMIB Final) Destruction")
+   {
+    R_Date("Beta-85991 Olea europaea", 3240, 50)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Beta-85992 Olea europaea", 3180, 40)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Beta-115890 Olea europaea", 3170, 60)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Beta-129765 Olea europaea", 3220, 40)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Beta-151768 Olea europaea", 3270, 40)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary();
+  };
+  Sequence()
+  {
+   Boundary();
+   Phase("Malia Thera tsunami TAQ")
+   {
+    R_Date("Poz-96175 C22 charcoal", 3200,30)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("Poz-85442 C20 charcoal", 3220,30)
+    {
+     Outlier ("General",0.05);
+    };
+    Date("Date Malia tsunami TAQ");
+   };
+   Boundary();
+  };
+  Label("Tell el-Dab'a model after Kutschera et al. 2012 revised as in Höflmayer and Manning 2022 with reduced likely AMS Egypt offset of 12,5 after Manning et al. 2020a");
+  Delta_R("Egypt",12,5);
+  Label("Samples associated with particular boundaries:");
+  R_Date("F to E3, associated with VERA-3643 **)", 3450, 26)
+  {
+   Outlier("General", 0.05);
+  };
+  R_Date("D/3 to D/2, associated with VERA-3645 **)", 3351, 38)
+  {
+   Outlier("General", 0.05);
+  };
+  Label(" ");
+  Sequence("Tell el-Daba")
+  {
+   Boundary("Start");
+   Phase("N/2-3")
+   {
+    R_Date("VERA-2900 seeds, Lolium type", 3755, 26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3641 seeds, Lolium type", 3739, 38)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2901 seeds, Poaceae", 3725, 30)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition N/2-3 to N/1");
+   Phase("N/1")
+   {
+    R_Date("VERA-2619 seed, Lolium type, Poaceae", 3697, 37)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2620 seed, Lolium type, Poaceae", 3688, 36)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition N/1 to M");
+   Phase("M")
+   {
+    R_Date("VERA-2631 seeds, Cerealia, Lolium type", 3643, 35)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition M to L *)");
+   Boundary("Transition L to K *)");
+   Boundary("Transition K to I *)");
+   Boundary("I to H *)");
+   Phase("H")
+   {
+    R_Date("VERA-2618 seed, Lolium type", 3593, 34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3639 seeds, Lolium type", 3553, 25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15951 seeds, Lolium type", 3522, 32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15952 seeds, Lolium type", 3577, 32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3638 seeds, Lolium type", 3522, 37)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition H to G/4");
+   Phase("G/4")
+   {
+    R_Date("VERA-2899 seeds, Poaceae", 3591, 26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3640 seeds, Lolium type", 3530, 38)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15956 seeds, Lolium type", 3504, 32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15954 seeds, Lolium type", 3532, 34)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition G/4 to G/1-3");
+   Phase("G/1-3")
+   {
+    R_Date("VERA-2624 seeds, Hordeum vulgare, Lolium type", 3530, 34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2622 seeds, Lolium type, Poaceae", 3481, 36)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2623 seeds, Triticum dicoccum", 3466, 39)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3642 seeds, Lolium type, Poaceae", 3447, 25)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition G/1-3 to F");
+   Phase("F")
+   {
+    R_Date("VERA-2898 seeds, Lolium type, Phalaris/Cynodon sp.", 3505, 27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2625 seeds, Lolium sp., Lolium type, Lolium/Bromus sp.", 3467, 35)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("=F to E3, associated with VERA-3643 **)");
+   Phase("E/3")
+   {
+    R_Date("VERA-2897 seeds, Hordeum vulgare", 3525, 26)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition E/3 to E/2");
+   Phase("E/2")
+   {
+    R_Date("VERA-3637 seeds, Lolium type", 3415, 26)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition E/2 to E/1");
+   Phase("E/1")
+   {
+    R_Date("VERA-3618 seeds, Cerealia", 3436, 35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15949 seeds, Cerealia", 3437, 30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15948 seeds, Cerealia", 3511, 32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3636 seeds, Lolium type", 3449, 26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3617 seeds, Poaceae", 3422, 35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2626 seed, Lolium type, Lolium/Bromus/Agropyron sp", 3389, 36)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition E/1 to D/3");
+   Phase("D/3")
+   {
+    R_Date("VERA-3033 seed, Cerealia", 3480, 28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2896 seeds, Poaceae", 3428, 37)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2895 seed, Lolium type", 3426, 26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3619 seeds, Lolium type", 3396, 34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2629 seeds, Lolium type, Poaceae", 3384, 30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3620 seeds, Lolium type", 3377, 33)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("=D/3 to D/2, associated with VERA-3645 **)");
+   Phase("D/2")
+   {
+    R_Date("VERA-3621 seeds, Lolium type", 3354, 26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15953 seeds, Lolium type", 3392, 31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15901 seeds, Lolium type", 3479, 33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3622 seeds, Poaceae", 3394, 36)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2627 seed, Lolium type", 3390, 34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-2628 seed, Triticum sp., Poaceae", 3359, 34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3616 seeds, Poaceae", 3337, 44)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition D/2 to D/1");
+   Phase("D/1")
+   {
+    R_Date("VERA-3032 seed, Lolium type", 3314, 36)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Transition D/1 to C/2-3");
+   Phase("C/2-3")
+   {
+    Sequence("for sample exclusively in C/2")
+    {
+     Boundary("start of C/2 *)");
+     Phase("C/2")
+     {
+      R_Date("VERA-3031 seeds, Lolium type", 3414, 35)
+      {
+       Outlier("General", 0.05);
+      };
+     };
+    };
+    R_Date("VERA-3725 seed, Lolium type", 3336, 29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-3724 seeds, Lolium type", 3320, 29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15959", 3296 seeds, Lolium type, 31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15957 seeds, Lolium type", 3322, 31)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End");
+  };
+  Sequence("Tell el-Ajjul")
+  {
+   //Pumice appears in both H5 sub-phases; Thera eruption therefore either before H5 (i.e. H6) or at latest by early H5 (H5B) (Fisher 2009). Thus Boundary Transition H6 to H5 plausible TAQ for the Thera eruption. Assume growing season offset at 12,5 for southern Levant locus (see Manning et al. 2020a).
+   Boundary("Ajjul Start");
+   Phase("H6")
+   {
+    R_Date("VERA-1905", 3310, 35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-1904", 3310, 30)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Ajjul Transition H6 to H5");
+   Phase("H5")
+   {
+    R_Date("VERA-1907", 3280, 35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-1906", 3260, 35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-1909", 3285, 35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-1901", 3230, 30)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Ajjul Transition H5 to H4-3");
+   Phase("H4-3")
+   {
+    R_Date("VERA-1902", 3295, 40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("VERA-1910", 3250, 30)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("Ajjul End");
+  };
+  //End Egypt and S Levant AMS 14C growing season offset (see Manning et al. 2020a)
+  Delta_R("No Delta R",0,0);
+  Sequence("Kolonna, Aegina")
+  {
+   //S = short-lived plant material, B = animal bone, C = charcoal (apparently not very long-lived, T = wood twig, so shorter-lived).
+   //Wild et al. 2010 model
+   Boundary("Begin E");
+   Phase("Phase E")
+   {
+    Sequence()
+    {
+     Combine("fire destruction")
+     {
+      Outlier ("General",0.05);
+      R_Date("VERA-2678 S", 3724, 35)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-2680 S", 3722, 35)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-2681 S", 3739, 35)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-2679 S", 3761, 35)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VRI-0395 C", 3670, 90)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("HV-5841 C", 3625, 65)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-2682 S", 3712, 35)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-2683 S", 3721, 35)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("HV-5840 C", 3820, 65)
+      {
+       Outlier("SSimple",0.05);
+      };
+     };
+     R_Date("VERA-4641 B", 3759, 35)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+    R_Date("VERA-2688 B", 3698, 33)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("Transition E/F");
+   Phase("Phase F")
+   {
+    R_Date("VERA-2692 B", 3704, 36)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("Transition F/G");
+   Phase("Phase G")
+   {
+    Sequence("Sequence 1")
+    {
+     R_Date("VERA-4640 B", 3800, 44)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-4639 B", 3809, 32)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+    R_Date("VERA-4638 B", 3646, 32)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("VERA-4281 S", 3740, 36)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("VERA-4282 S", 3711, 34)
+    {
+     Outlier ("General",0.05);
+    };
+    R_Date("VERA-4283 S", 3780, 37)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("Transition G/H");
+   Phase("Phase H")
+   {
+    Sequence("Sequence 2")
+    {
+     R_Date("VERA-4637 B", 3643, 30)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-4636 B", 3628, 30)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+    Sequence("Sequence 3")
+    {
+     R_Date("VERA-4280 S", 3724, 39)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-4279 S", 3718, 38)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+    R_Date("VERA-2687", 3694 B, 35)
+    {
+     Outlier ("General",0.05);
+    };
+   };
+   Boundary("Transition H/I");
+   Phase("Phase I")
+   {
+    Sequence()
+    {
+     Phase("before Minoan layer")
+     {
+      R_Date("VERA-4634 B", 3544, 37)
+      {
+       Outlier ("General",0.05);
+      };
+      R_Date("VERA-4278 S", 3522, 38)
+      {
+       Outlier ("General",0.05);
+      };
+     };
+     Combine("Minoan layer")
+     {
+      Outlier ("General",0.05);
+      R_Date("VERA-4038 S", 3506, 34)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4576 B", 3482, 37)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4575 B", 3537, 36)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4578 B", 3501, 39)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4579 B", 3526, 38)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4580 B", 3506, 33)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4276 S", 3506, 37)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4275 S", 3544, 38)
+      {
+       Outlier("SSimple",0.05);
+      };
+     };
+     R_Date("VERA-4577 B", 3458, 39)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+   };
+   Boundary("Transition I/J");
+   Phase("Phase J = MHIII")
+   {
+    Sequence()
+    {
+     Combine()
+     {
+      Outlier ("General",0.05);
+      R_Date("VERA-4571 B", 3469, 38)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4574 B", 3430, 39)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("VERA-4573 B", 3485, 36)
+      {
+       Outlier("SSimple",0.05);
+      };
+     };
+     Phase()
+     {
+      R_Date("VERA-4572 B", 3407, 38)
+      {
+       Outlier ("General",0.05);
+      };
+      R_Date("VERA-4570 B", 3428, 36)
+      {
+       Outlier ("General",0.05);
+      };
+     };
+    };
+   };
+   Boundary("Kolonna Transition J/K");
+   Phase("Phase K - LHI")
+   {
+    Sequence()
+    {
+     R_Date("VERA-4633 B", 3333, 29)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-4632 B", 3356, 36)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-4631 B", 3349, 36)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+   };
+   Boundary("Kolonna Transition K/L");
+   Phase("Phase L - LHII")
+   {
+    R_Date("VERA-4630 B", 3313, 48)
+    {
+     Outlier ("General",0.05);
+    };
+    Date("Kolonna LHII");
+   };
+   Boundary("End Kolonna L: End LHII");
+   Boundary("Begin Kolonna M: LHIIIA");
+   Phase("Phase M - LHIIIA")
+   {
+    Combine()
+    {
+     Outlier ("General",0.05);
+     R_Date("VERA-4284 S", 3044, 35)
+     {
+      Outlier("SSimple",0.05);
+     };
+     R_Date("VERA-4582 T", 2986, 33)
+     {
+      Outlier("SSimple",0.05);
+     };
+     R_Date("VERA-4285 S", 3040, 37)
+     {
+      Outlier("SSimple",0.05);
+     };
+    };
+   };
+   Boundary("End Phase M");
+  };
+  Sequence()
+  {
+   Sequence("Akrotiri Stages 2/3 Stored or LCI Adv charcoal")
+   {
+    Tau_Boundary ("T for Stages 2/3");
+    Phase ("Akrotiri secure Stages 2/3 Food Products in Use/Storage or LCI Adv charcoal")
+    {
+     R_Date("OxA-1552 Lathyrus sp.", 3390, 65)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1555 Lathyrus sp.", 3245, 65)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1548 Lathyrus sp.", 3335, 60)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1549 Lathyrus sp.", 3460, 80)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1550 Lathyrus sp.", 3395, 65)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1553 Lathyrus sp.", 3340, 65)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1554 Lathyrus sp.", 3280, 65)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-1556 Hordeum sp.", 3415, 70)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("K-5352 pulses", 3310, 65)
+     {
+      Outlier ("General",0.05);
+     };
+     //R_Date("K-5353 pulses NOT CLEAR IF 2/3 so exclude", 3430, 90)
+     //{
+     // Outlier ("General",0.05);
+     //};
+     R_Date("K-3228 pulses", 3340, 55)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-11817 ?Lathyrus sp.", 3348, 31)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-11818 Hordeum sp.", 3367, 33)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-11820 Hordeum sp.", 3400, 31)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-11869 Hordeum sp.", 3336, 34)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date( "OxA-12170 ?Lathyrus sp.", 3336, 28)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-12171 Hordeum sp.", 3372, 28)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-12175 Hordeum sp.", 3318, 28)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-12172 Hordeum sp.", 3321, 32)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-2756 Hordeum sp.", 3317, 28)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-2757 ?Lathyrus sp.", 3315, 31)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-2758 Hordeum sp.", 3339, 28)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-2757 repeat ?Lathyrus sp.", 3390, 32)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-2758 repeat Hordeum sp.", 3322, 32)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date ("OxA-25176 insect chitin", 3368, 29)
+     {
+      Outlier ("General",0.05);
+     };
+     Label("Hd data on SL samples from Akrotiri VDL");
+     R_Date("Hd-7092-6795 peas",3360,60)
+     {
+      Outlier ("General",0.05);
+     };
+     // R_Date("Hd-6058-5519 grains no context so exclude",3490,80)
+     // {
+     // Outlier ("General",0.05);
+     // };
+     // R_Date("Hd-6059-7967 grains no context so exclude",3140,70)
+     // {
+     //  Outlier ("General",0.05);
+     // };
+     Label("LCI Advanced or Advanced? or VDL charcoal, Akrotiri, Thera");
+     R_Date ("DEM-1311 LC I VDL", 3307, 25)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date ("DEM-1529 LC I Advanced? VDL", 3281,25)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date ("DEM-1607 LC I Advanced VDL", 3228,30)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date ("DEM-1624 LC I Advanced VDL", 3360,25)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date ("DEM-1615 LC I Advanced? VDL", 3389,25)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("K-4255 twig in pumice so assume LCI Advanced", 3380, 60)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+    Boundary("E2/3");
+   };
+   Interval("Stage 3 to eruption");
+   Sequence("Stage 5 Santorini eruption/tsunami and olive in pumice dates")
+   {
+    Tau_Boundary ("T for Stage 5");
+    Phase ("Stage 5 dataset, close TPQs for Thera eruption or even date of Thera eruption")
+    {
+     Label("LBIA/LMIA mature and destruction later below Thera tephra, Trianda, Rhodes, so TPQ");
+     R_Date ("DEM-94 charcoal", 3347,46)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date ("DEM-93 charcoal", 3358,48)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Combine("Trianda short-lived late LMIA twig, pre-Thera-tephra, Quercus sp.")
+     {
+      Outlier ("General",0.05);
+      R_Date("OxA-10643", 3367, 39)
+      {
+       Outlier("SSimple",0.05);
+      };
+      R_Date("OxA-11884", 3344, 32)
+      {
+       Outlier("SSimple",0.05);
+      };
+     };
+     Date("=Felling Miletos WM");
+     Label("Thera Tsunami Palaikastro");
+     Label("Palaikastro Promontory");
+     R_Date("GrA-30336 Cattle bone",3310,35)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("GrA-30339 Cattle bone",3390,35)
+     {
+      Outlier ("General",0.05);
+     };
+     Label("Bone/jaw, tooth Palaikastro drain with stratified Thera tephra");
+     R_Date("GrA-30336 goat/sheep bone/jaw",3325,40)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("GrA-30339 goat/sheep bone/jaw",3345,40)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("GrA-29042 tooth",3385,40)
+     {
+      Outlier ("General",0.05);
+     };
+     Label("Thera Tsunami Çeşme-Bağlararası");
+     R_Date("OxA-38858 H1a S",3275,17)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-38881 H1a B",3367,22)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-38973 H1a C",3318,19)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-38972 H1a B",3316,20)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-38857 H1a S",3312,17)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-38950 H1b C",3384,22)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("D-AMS019172 H1b B",3372,27)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("OxA-38966 H1c C",3297,19)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("D-AMS019173 H1c C",3291,30)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("Lyon7920 organic-rich layer",3295,30)
+     {
+      Outlier ("General",0.05);
+     };
+     Label("Golhisar close TPQ for Santorini tephra deposit");
+     //Data from Eastwood et al. 1999
+     R_Date("Beta-56673",3300,70)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("SRR-5188",3225,45)
+     {
+      Outlier ("General",0.05);
+     };
+     Label("Olive branch or tree root samples from Santorini pre-eruption ABA and HS TPQ for eruption");
+     R_Date("VERA-5614 ABA olive branch",3282,21)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5614HS olive branch",3359,33)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5615 ABA olive branch", 3280,24)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5615HS olive branch", 3321,24)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5620 ABA olive branch",3277,25)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5620HS olive branch",3345,24)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5610 ABA olive branch",3399,25)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5610HS olive branch",3342,26)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5083 ABA olive branch",3270,36)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5083HS olive branch",3326,77)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5082 ABA olive branch",3332,38)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5082HS olive branch",3369,36)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5084 ABA root",3354,32)
+     {
+      Outlier ("General",0.05);
+     };
+     R_Date("VERA-5084HS root",3368,34)
+     {
+      Outlier ("General",0.05);
+     };
+    };
+    Boundary("=TE5");
+   };
+   Boundary("Start/Early LMIB/LHIIA");
+   Phase("Thera Eruption TAQ data from Start Phases of SL data from subsequent Late/Final LMIB and subsequent LHII contexts")
+   {
+    Date("=Kolonna Transition K/L");
+    Date("=Ajjul Transition H6 to H5");
+    //Tell el-Dab'a TAQ as start C/2 with Thera pumice present in C/2
+    Date("=start of C/2 *)");
+    Date("=TAQ for Start Iklaina LHII");
+    Date("=Start LHIIA Kakovatos");
+    Date("=Start Chania Late LMIB");
+    Date("=Start Myrtos-Pyrgos Late LMIB");
+    Date("=Date Malia tsunami TAQ");
+   };
+   Boundary("End Sequence");
+  };
+  Difference("D","TE5","E2/3",LnN(ln(0.75),ln(3)));
+ };
+
+//Note: this is the very short Difference variant; for the modest Difference version substitute the line of code: Difference("D","TE5","E2/3",LnN(ln(3),ln(2)));
+
+//Note for the uniform Phase versions of the model (Figures 3-4 and 9) the two lines of code:
+Tau_Boundary ("T for Stages 2/3");
+Tau_Boundary ("T for Stage 5");
+
+Should be replaced as: 	Boundary ("Start Stages 2/3");
+Boundary ("Start Stage 5");
+
+//Note for the models used for Figure 8, with a restricted time constant (a uniform probability of 0-30 years or 0-20 years) for the Tau function for the Stage (v) or 5 Phase, the following changes were made:
+(a)	The Stages (ii)/(iii) or 2/3 Phase was treated as a (short) uniform probability Phase (as in the Figures 3-4 and 9 case), so: Boundary ("Start Stages 2/3"); and
+(b)	The Tau_Boundary at the start of the Stage (v) or 5 dataset was renamed as Tau_Boundary (“T”) and the following two lines of code added at the end of the model after the Difference line:
+Tau=(TE5-T);
+Tau&= U(0,30); or Tau&= U(0,20);
+
+//Note for the Charcoal Plus Outlier Model version (Figure 9) the non-Tau_Boundary version is used (as Figures 3-4) and the following additional changes are required:
+(a)	The Charcoal Plus Outlier Model values (see Dee and Bronk Ramsey 2014 or Manning et al. 2020b: S1 File) must be saved in a .prior file in your OxCal folder. These can then be called. The model also adds the line:   Outlier_Model("IA",Prior("Charcoal_Plus"),U(0,3),"t");
+(b)	The dates on charcoal or wood or bulk sediment samples in the Stages (ii)/(iii) or 2/3 and Stage (v) or 5 Phases have the Charcoal Plus Outlier Model applied. Thus:
+
+  R_Date ("DEM-1311 LC I VDL", 3307, 25)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date ("DEM-1529 LC I Advanced? VDL", 3281,25)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date ("DEM-1607 LC I Advanced VDL", 3228,30)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date ("DEM-1624 LC I Advanced VDL", 3360,25)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date ("DEM-1615 LC I Advanced? VDL", 3389,25)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("K-4255 twig in pumice so assume LCI Advanced", 3380, 60)
+     {
+      Outlier("IA", 1);
+     };
+//note: this twig is stated as having 10 growth rings (Friedrich et al. 1990, 195) so I apply the Charcoal Plus Outlier Model
+     R_Date ("DEM-94 charcoal", 3347,46)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date ("DEM-93 charcoal", 3358,48)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("OxA-38973 H1a C",3318,19)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("OxA-38950 H1b C",3384,22)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("OxA-38966 H1c C",3297,19)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("D-AMS019173 H1c C",3291,30)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("Lyon7920 organic-rich layer",3295,30)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("Beta-56673",3300,70)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("SRR-5188",3225,45)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5614 ABA olive branch",3282,21)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5614HS olive branch",3359,33)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5615 ABA olive branch", 3280,24)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5615HS olive branch", 3321,24)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5620 ABA olive branch",3277,25)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5620HS olive branch",3345,24)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5610 ABA olive branch",3399,25)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5610HS olive branch",3342,26)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5083 ABA olive branch",3270,36)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5083HS olive branch",3326,77)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5082 ABA olive branch",3332,38)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5082HS olive branch",3369,36)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5084 ABA root",3354,32)
+     {
+      Outlier("IA", 1);
+     };
+     R_Date("VERA-5084HS root",3368,34)
+     {
+      Outlier("IA", 1);
+     };
